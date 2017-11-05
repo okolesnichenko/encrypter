@@ -17,7 +17,7 @@ namespace lab5_encrypting_
 
         private string text;
         private string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-        private string natural = "оеаитнсрвлкмдпуяыгзбчйчъжьюшцщэфё";
+        private string natural = "отеаинрвслкпдмуыьчбзгяжхчюэшйщцфё";
         private HelpStruct[] helpStruct = new HelpStruct[33];
         public EncryptingRussianText(string text)
         {
@@ -25,6 +25,7 @@ namespace lab5_encrypting_
         }
         public string Encrypting()
         {
+            //вычисление частоты встречаемости букв в тексте
             for (int i = 0; i < alphabet.Length; i++)
             {
                 for (int j = 0; j < text.Length; j++)
@@ -36,7 +37,7 @@ namespace lab5_encrypting_
                     }
                 }
             }
-
+            //сортировка структуры по частоте
             for(int i = 0; i < helpStruct.Length; i++)
             {
                 for(int j = 0; j<helpStruct.Length - i - 1; j++)
@@ -50,7 +51,7 @@ namespace lab5_encrypting_
                 }
             }
             natural = natural.ToUpper();
-
+            //замена символов
             for(int i = 0; i<helpStruct.Length; i++)
             {
                 text = text.Replace(helpStruct[i].simbol, natural[i]);
