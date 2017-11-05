@@ -9,6 +9,7 @@ namespace lab5_encrypting_
 {
     class EncryptingRussianText
     {
+        //структура содержащая букву и частоту ее встречаемости в тексте
         public struct HelpStruct
         {
             public char simbol;
@@ -32,6 +33,7 @@ namespace lab5_encrypting_
                 {
                     if (text[j]==alphabet[i])
                     {
+                        //повторное переприсваивание надо исправить
                         helpStruct[i].simbol = alphabet[i];
                         helpStruct[i].period++;
                     }
